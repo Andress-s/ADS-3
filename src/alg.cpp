@@ -1,6 +1,49 @@
 // Copyright 2021 NNTU-CS
 
 int cbinsearch(int *arr, int size, int value) {
-  //  поместить сюда реализацию алгоритма
+  int count = 0;
+    int left = 0;
+    int right = size - 1;
+    int mid = 0;
+    while ((left <= right)) {
+        
+        mid = (left + right) / 2; // Считывание среднего индекса отрезка [left, right]
+
+        if (arr[mid] == value) { // Проверяме ключ со серединным элементом
+            int save = mid-1;
+            while (arr[mid] == value)
+            {
+                if (arr[mid] == value)
+                {
+                    mid++;
+                    count++;
+                }
+                else
+                {
+                    break;
+                }
+            }
+            while (arr[save] == value)
+            {
+                if (arr[save] == value)
+                {
+                    --save;
+                    count++;
+                }
+                else
+                {
+                    break;
+                }
+            }
+            break;
+        }
+        if (arr[mid] > value) { // Проверяем, какую часть нужно отбросить
+            right = mid - 1;
+        }
+        else {
+            left = mid + 1;
+        }
+    }
+    return count;
   return 0; // если ничего не найдено
 }
