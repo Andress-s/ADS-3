@@ -6,23 +6,19 @@ int cbinsearch(int *arr, int size, int value) {
     int right = size - 1;
     int mid = 0;
     while ((left <= right)) {
-        mid = (left + right) / 2; // Считывание среднего индекса отрезка [left, right]
-        if (arr[mid] == value) { // Проверяме ключ со серединным элементом
+        mid = (left + right) / 2;
+        if (arr[mid] == value) {
             int save = mid-1;
-            while (arr[mid] == value)
-            {
-                if (arr[mid] == value)
-                {
+            while (arr[mid] == value) {
+                if (arr[mid] == value) {
                     mid++;
                     count++;
                 } else {
                     break;
                 }
             }
-            while (arr[save] == value)
-            {
-                if (arr[save] == value)
-                {
+            while (arr[save] == value) {
+                if (arr[save] == value) {
                     --save;
                     count++;
                 } else {
