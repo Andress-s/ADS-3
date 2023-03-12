@@ -6,9 +6,7 @@ int cbinsearch(int *arr, int size, int value) {
     int right = size - 1;
     int mid = 0;
     while ((left <= right)) {
-        
         mid = (left + right) / 2; // Считывание среднего индекса отрезка [left, right]
-
         if (arr[mid] == value) { // Проверяме ключ со серединным элементом
             int save = mid-1;
             while (arr[mid] == value)
@@ -17,9 +15,7 @@ int cbinsearch(int *arr, int size, int value) {
                 {
                     mid++;
                     count++;
-                }
-                else
-                {
+                } else {
                     break;
                 }
             }
@@ -29,9 +25,7 @@ int cbinsearch(int *arr, int size, int value) {
                 {
                     --save;
                     count++;
-                }
-                else
-                {
+                } else {
                     break;
                 }
             }
@@ -39,8 +33,7 @@ int cbinsearch(int *arr, int size, int value) {
         }
         if (arr[mid] > value) { // Проверяем, какую часть нужно отбросить
             right = mid - 1;
-        }
-        else {
+        } else {
             left = mid + 1;
         }
     }
